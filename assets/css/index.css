@@ -470,10 +470,57 @@ html[data-theme="dark"] .skills-table td {
 @media (max-width: 720px) {
   .skills-table {
     min-width: 560px;
+    display: none; /* hide wide table on small screens */
   }
   .skills-table th[scope="row"] {
     width: 90px;
   }
+}
+
+/* Mobile skills list (used instead of the wide table) */
+.skills-list {
+  display: none;
+}
+@media (max-width: 720px) {
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    font-family: var(--font-body);
+  }
+  .skill-name {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .skills-list .badge {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  /* single column on very small devices */
+  @media (max-width: 420px) {
+    .skills-list {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* Dark theme adjustments for mobile list */
+html[data-theme="dark"] .skill-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.04);
 }
 
 /* Contact Section */
