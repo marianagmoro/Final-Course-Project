@@ -88,14 +88,9 @@
       <section id="about">
         <img src="assets/images/about.png" alt="About" class="section-about" />
         <p>
-          I am a [your profession] based in [your location]. My work explores
-          [your themes or interests].
+          I am a graphic design student based in Madrid. My work explores mainly
+          3D modelling, animation and illustration.
         </p>
-        <p>
-          I graduated from [your school] with a degree in [your field]. I am
-          passionate about [what drives you].
-        </p>
-        <p>My approach combines [your methods] to create [your outcomes].</p>
       </section>
 
       <!-- Contact Section -->
@@ -105,7 +100,33 @@
           alt="Contact"
           class="section-contact"
         />
-        <p>marianagonzalezmoro@gmail.com</p>
+
+        <!-- Contact form: default uses mailto fallback. To use Formspree, set the form action to
+             `https://formspree.io/f/{your-id}` and method="POST` (remove data-mailto). -->
+        <form
+          class="contact-form"
+          id="contactForm"
+          data-mailto="marianagonzalezmoro@gmail.com"
+        >
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit" class="btn">Send</button>
+
+          <div class="form-success" id="formSuccess" aria-live="polite" hidden>
+            Thanks — your message is ready to send.
+          </div>
+          <div class="form-error" id="formError" aria-live="polite" hidden>
+            Sorry, there was a problem sending your message.
+          </div>
+        </form>
+
         <p>
           <a href="https://instagram.com/marianagmoro" target="_blank"
             >Instagram</a
@@ -124,5 +145,43 @@
     <footer>
       <p>&copy; 2025 Mariana Gonzalez-Moro. All rights reserved.</p>
     </footer>
+    <!-- Theme toggle (fixed in top-right; does not affect layout) -->
+    <button
+      id="themeToggle"
+      class="theme-toggle"
+      aria-label="Toggle dark mode"
+      aria-pressed="false"
+    >
+      <svg
+        class="icon icon-moon"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
+          fill="currentColor"
+        />
+      </svg>
+      <svg
+        class="icon icon-sun"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.79 1.8-1.79zM1 13h3v-2H1v2zm10-9h2V1h-2v3zm7.03 1.05l1.79-1.79-1.79-1.79-1.79 1.79 1.79 1.79zM17 13h3v-2h-3v2zM12 7a5 5 0 100 10 5 5 0 000-10zm4.24 12.16l1.8 1.79 1.79-1.79-1.79-1.79-1.8 1.79zM12 23h2v-3h-2v3zM4.24 19.16l1.79 1.79 1.8-1.79-1.8-1.79-1.79 1.79z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>
