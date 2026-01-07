@@ -1,14 +1,50 @@
-// Smooth scroll for navigation links (backup for browsers that don't support CSS scroll-behavior)
+// Smooth scroll helper with easing and offset (provides a smoother feel than native in some browsers)
+function smoothScrollTo(element, duration = 600, offset = 20, callback) {
+  const start = window.pageYOffset;
+  const rect = element.getBoundingClientRect();
+  const targetY = rect.top + start - offset;
+  const distance = targetY - start;
+  let startTime = null;
+
+  // easeInOutQuad
+  function ease(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  }
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = ease(progress);
+    window.scrollTo(0, Math.round(start + distance * eased));
+    if (elapsed < duration) {
+      requestAnimationFrame(step);
+    } else if (typeof callback === "function") {
+      callback();
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
+// Apply smooth scroll to internal anchor links and update the URL after the scroll
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
+    const hash = this.getAttribute("href");
+    const target = document.querySelector(hash);
+    if (!target) return;
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    // small offset so the heading isn't flush to the top
+    const header = document.querySelector("header");
+    const offset = header ? Math.round(header.offsetHeight * 0.1) : 20;
+    smoothScrollTo(target, 650, offset, () => {
+      // update the URL hash without jumping
+      if (history.pushState) {
+        history.pushState(null, "", hash);
+      } else {
+        window.location.hash = hash;
+      }
+    });
   });
 });
 
