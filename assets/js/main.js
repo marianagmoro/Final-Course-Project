@@ -72,6 +72,38 @@ function applyTheme(theme) {
   const btn = document.getElementById("themeToggle");
   if (btn)
     btn.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+  // Swap logo image for dark mode if present
+  const logo = document.querySelector(".site-logo");
+  if (logo) {
+    logo.src =
+      theme === "dark"
+        ? "assets/images/name white.png"
+        : "assets/images/name.png";
+  }
+  // Swap recent work image for dark mode if present
+  const sectionTitle = document.querySelector(".section-title");
+  if (sectionTitle) {
+    sectionTitle.src =
+      theme === "dark"
+        ? "assets/images/recent work white.png"
+        : "assets/images/recent work.png";
+  }
+  // Swap About section image for dark mode if present
+  const sectionAbout = document.querySelector(".section-about");
+  if (sectionAbout) {
+    sectionAbout.src =
+      theme === "dark"
+        ? "assets/images/about white.png"
+        : "assets/images/about.png";
+  }
+  // Swap Contact section image for dark mode if present
+  const sectionContact = document.querySelector(".section-contact");
+  if (sectionContact) {
+    sectionContact.src =
+      theme === "dark"
+        ? "assets/images/contact white.png"
+        : "assets/images/contact.png";
+  }
 }
 
 function initTheme() {

@@ -116,6 +116,10 @@ html[data-theme="dark"] .icon-moon {
 .contact-form label {
   font-size: 0.9rem;
 }
+.contact-form label {
+  /* Ensure form labels use the body font (Montserrat) */
+  font-family: var(--font-body);
+}
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -124,6 +128,12 @@ html[data-theme="dark"] .icon-moon {
   border-radius: 4px;
   font-family: var(--font-body);
   font-size: 1rem;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  /* Ensure placeholder text uses the same font */
+  font-family: var(--font-body);
+  color: #999;
 }
 .contact-form .btn {
   background: var(--color-accent);
@@ -134,6 +144,10 @@ html[data-theme="dark"] .icon-moon {
   border-radius: 4px;
   font-weight: 600;
   transition: background 0.15s ease;
+}
+.contact-form .btn {
+  /* Use Montserrat for button text */
+  font-family: var(--font-body);
 }
 .contact-form .btn:hover {
   background: #222;
@@ -176,6 +190,8 @@ nav a {
   color: var(--color-text);
   text-decoration: none;
   transition: color 0.2s ease, opacity 0.3s ease;
+  /* Use the site's body font for navigation links */
+  font-family: var(--font-body);
 }
 
 nav a:hover {
@@ -250,6 +266,11 @@ h3 {
   color: var(--color-accent);
 }
 
+/* Paragraphs: ensure body copy uses the site's body font (Montserrat) */
+p {
+  font-family: var(--font-body);
+}
+
 /* About Section */
 #about p {
   margin-bottom: var(--space-sm);
@@ -283,6 +304,8 @@ footer {
   border-top: 1px solid var(--color-text);
   font-size: 0.875rem;
   color: var(--color-accent);
+  /* Ensure footer text uses Montserrat */
+  font-family: var(--font-body);
 }
 
 /* Responsive */
