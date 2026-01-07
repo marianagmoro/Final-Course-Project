@@ -240,40 +240,51 @@ html[data-theme="dark"] .icon-moon {
 
   /* Mobile nav: hide by default and show as an overlay when open (prevents layout shift) */
   nav ul {
-    display: none;
-    position: fixed;
-    top: 3.5rem; /* sits below the top controls */
-    left: 0;
-    right: 0;
+    /* remove bullets */
+    list-style: none;
     margin: 0;
-    padding: 1rem;
+    padding: 3.5rem 1rem 1rem 1rem; /* space at top to clear the toggle */
+    position: fixed;
+    top: 0; /* full-height panel */
+    left: 0;
+    bottom: 0;
+    width: 220px; /* vertical sidebar width */
     background: var(--color-background);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: 8px 0 24px rgba(0, 0, 0, 0.12);
     z-index: 1050;
+    display: flex;
     flex-direction: column;
     gap: var(--space-sm);
-    align-items: center;
+    align-items: flex-start;
+    transform: translateX(-100%);
+    transition: transform 220ms ease;
+    -webkit-overflow-scrolling: touch;
   }
 
+  /* reveal the sidebar by sliding in */
   body.nav-open nav ul {
-    display: flex;
+    transform: translateX(0);
   }
 
   /* Make nav links larger/tappable on mobile */
   nav a {
-    padding: 0.5rem 0.25rem;
-    display: inline-block;
+    padding: 0.5rem 1rem;
+    display: block;
+    width: 100%;
+    text-align: left;
     font-size: 1rem;
   }
 }
 
-/* Navigation */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: var(--space-md);
-  flex-wrap: wrap;
+/* Navigation (desktop only) */
+@media (min-width: 769px) {
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
 }
 
 nav a {

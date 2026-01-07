@@ -188,4 +188,21 @@ document.addEventListener("DOMContentLoaded", function () {
       navToggle.setAttribute("aria-expanded", "false");
     });
   });
+
+  // Ensure nav is hidden whenever the hamburger is visible (mobile)
+  function syncNavWithViewport() {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    if (isMobile) {
+      body.classList.remove("nav-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  // Run on load and on resize (debounced)
+  syncNavWithViewport();
+  let resizeTimer = null;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(syncNavWithViewport, 120);
+  });
 });
