@@ -177,6 +177,96 @@ html[data-theme="dark"] .icon-moon {
   margin-bottom: var(--space-md);
 }
 
+/* Nav toggle (hamburger) for small screens */
+.nav-toggle {
+  display: none; /* shown on small screens */
+  background: transparent;
+  border: 0;
+  padding: 0.35rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+}
+.hamburger {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  position: relative;
+  border-radius: 2px;
+  transition: background 0.15s ease;
+}
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: transform 0.18s ease, top 0.18s ease, background 0.15s ease;
+}
+.hamburger::before {
+  top: -7px;
+}
+.hamburger::after {
+  top: 7px;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: inline-flex;
+    /* place toggle fixed in the top-left so it doesn't shift surrounding elements */
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 6px;
+  }
+
+  /* Animate hamburger into X when nav is open */
+  body.nav-open .nav-toggle .hamburger {
+    background: transparent;
+  }
+  body.nav-open .nav-toggle .hamburger::before {
+    transform: translateY(7px) rotate(45deg);
+  }
+  body.nav-open .nav-toggle .hamburger::after {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Mobile nav: hide by default and show as an overlay when open (prevents layout shift) */
+  nav ul {
+    display: none;
+    position: fixed;
+    top: 3.5rem; /* sits below the top controls */
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 1rem;
+    background: var(--color-background);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    z-index: 1050;
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: center;
+  }
+
+  body.nav-open nav ul {
+    display: flex;
+  }
+
+  /* Make nav links larger/tappable on mobile */
+  nav a {
+    padding: 0.5rem 0.25rem;
+    display: inline-block;
+    font-size: 1rem;
+  }
+}
+
 /* Navigation */
 nav ul {
   list-style: none;
@@ -275,6 +365,104 @@ p {
 #about p {
   margin-bottom: var(--space-sm);
   text-align: center;
+}
+
+/* Skills table (3 rows: Expert/Intermediate/Beginner; 9 skill columns) */
+.table-wrap {
+  overflow-x: auto;
+  margin-top: var(--space-md);
+}
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px; /* ensures readability on desktop; scrolls on small screens */
+  font-family: var(--font-body);
+  /* Use automatic table layout so columns size to their content (longest word) */
+  table-layout: auto;
+}
+.skills-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1.4rem; /* place caption above the table and outside the horizontal scroll */
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-accent);
+  pointer-events: none;
+}
+.skills-table caption {
+  caption-side: top;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-accent);
+}
+.skills-table th,
+.skills-table td {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 0.5rem 0.6rem;
+  text-align: center;
+}
+.skills-table thead th {
+  background: rgba(0, 0, 0, 0.03);
+  font-weight: 600;
+}
+.skills-table th[scope="row"] {
+  text-transform: uppercase;
+  width: 110px;
+  background: transparent;
+}
+.skills-table thead th:first-child {
+  width: auto; /* allow row-heading to size to its content */
+}
+/* Make each skill column at least as wide as its longest content and prevent wrapping */
+.skills-table thead th:not(:first-child),
+.skills-table tbody td:not(:first-child) {
+  white-space: nowrap;
+  min-width: max-content;
+}
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #fff;
+  font-size: 0.9rem;
+}
+.badge.expert {
+  background: #28a745; /* green */
+}
+.badge.intermediate {
+  background: #ff9800; /* orange */
+}
+.badge.beginner {
+  background: #9e9e9e; /* gray */
+}
+
+/* Screen-reader only text utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+html[data-theme="dark"] .skills-table th,
+html[data-theme="dark"] .skills-table td {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 720px) {
+  .skills-table {
+    min-width: 560px;
+  }
+  .skills-table th[scope="row"] {
+    width: 90px;
+  }
 }
 
 /* Contact Section */

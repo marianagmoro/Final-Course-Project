@@ -166,3 +166,26 @@ function initTheme() {
 
 // Initialize theme on load
 document.addEventListener("DOMContentLoaded", initTheme);
+
+// Responsive nav toggle behavior
+document.addEventListener("DOMContentLoaded", function () {
+  const navToggle = document.getElementById("navToggle");
+  const body = document.body;
+  const primaryNav = document.getElementById("primaryNav");
+
+  if (!navToggle || !primaryNav) return;
+
+  navToggle.addEventListener("click", function () {
+    const expanded = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-expanded", String(!expanded));
+    body.classList.toggle("nav-open");
+  });
+
+  // Close mobile menu after clicking any anchor inside the nav
+  primaryNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", function () {
+      body.classList.remove("nav-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+});

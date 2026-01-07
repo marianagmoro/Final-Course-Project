@@ -16,8 +16,18 @@
     <header>
       <img src="assets/images/name.png" alt="Your Name" class="site-logo" />
       <p class="subtitle">design portfolio</p>
+      <!-- Mobile nav toggle -->
+      <button
+        id="navToggle"
+        class="nav-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="primaryNav"
+      >
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
       <nav>
-        <ul>
+        <ul id="primaryNav">
           <li><a href="#work">work</a></li>
           <li><a href="#about">about</a></li>
           <li><a href="#contact">contact</a></li>
@@ -91,6 +101,84 @@
           I am a graphic design student based in Madrid. My work explores mainly
           3D modelling, animation and illustration.
         </p>
+        <!-- Skills table: 9 skills across (columns), 3 proficiency rows -->
+        <div class="table-wrap">
+          <table class="skills-table" aria-label="Skills by proficiency">
+            <caption>
+              Skills by proficiency
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col" aria-hidden="true"></th>
+                <th scope="col">Photoshop</th>
+                <th scope="col">Illustrator</th>
+                <th scope="col">Premiere Pro</th>
+                <th scope="col">Cinema 4D</th>
+                <th scope="col">Procreate</th>
+                <th scope="col">Figma</th>
+                <th scope="col">Visual Studio</th>
+                <th scope="col">InDesign</th>
+                <th scope="col">After Effects</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Expert</th>
+                <td aria-label="Photoshop: Expert">
+                  <span class="badge expert" aria-hidden="true">✓</span>
+                </td>
+                <td aria-label="Illustrator: Expert">
+                  <span class="badge expert" aria-hidden="true">✓</span>
+                </td>
+                <td aria-label="Premiere Pro: Expert">
+                  <span class="badge expert" aria-hidden="true">✓</span>
+                </td>
+                <td aria-label="Cinema 4D: Expert">
+                  <span class="badge expert" aria-hidden="true">✓</span>
+                </td>
+                <td aria-label="Procreate: Expert">
+                  <span class="badge expert" aria-hidden="true">✓</span>
+                </td>
+                <td aria-label="Figma: Not expert"></td>
+                <td aria-label="Visual Studio: Not expert"></td>
+                <td aria-label="InDesign: Not expert"></td>
+                <td aria-label="After Effects: Not expert"></td>
+              </tr>
+              <tr>
+                <th scope="row">Intermediate</th>
+                <td aria-label="Photoshop: Not intermediate"></td>
+                <td aria-label="Illustrator: Not intermediate"></td>
+                <td aria-label="Premiere Pro: Not intermediate"></td>
+                <td aria-label="Cinema 4D: Not intermediate"></td>
+                <td aria-label="Procreate: Not intermediate"></td>
+                <td aria-label="Figma: Intermediate">
+                  <span class="badge intermediate" aria-hidden="true">✓</span>
+                </td>
+                <td aria-label="Visual Studio: Intermediate">
+                  <span class="badge intermediate" aria-hidden="true">✓</span>
+                </td>
+                <td aria-label="InDesign: Not intermediate"></td>
+                <td aria-label="After Effects: Not intermediate"></td>
+              </tr>
+              <tr>
+                <th scope="row">Beginner</th>
+                <td aria-label="Photoshop: Not beginner"></td>
+                <td aria-label="Illustrator: Not beginner"></td>
+                <td aria-label="Premiere Pro: Not beginner"></td>
+                <td aria-label="Cinema 4D: Not beginner"></td>
+                <td aria-label="Procreate: Not beginner"></td>
+                <td aria-label="Figma: Not beginner"></td>
+                <td aria-label="Visual Studio: Not beginner"></td>
+                <td aria-label="InDesign: Beginner">
+                  <span class="badge beginner" aria-hidden="true">✓</span>
+                </td>
+                <td aria-label="After Effects: Beginner">
+                  <span class="badge beginner" aria-hidden="true">✓</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <!-- Contact Section -->
