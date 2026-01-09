@@ -94,13 +94,13 @@ The theme switcher will automatically handle the swapping.
 
 ### Desktop View
 
-![Desktop Light Mode](assets/images/light mode.png)
-![Desktop Dark Mode](assets/images/dark mode.png)
+![Desktop Light Mode](assets/images/light-mode.png)
+![Desktop Dark Mode](assets/images/dark-mode.png)
 
 ### Mobile View
 
-![Mobile Light Mode](assets/images/phone white.PNG)
-![Mobile Dark Mode](assets/images/phone dark.PNG)
+![Mobile Light Mode](assets/images/mobile-light.png)
+![Mobile Dark Mode](assets/images/mobile-dark.png)
 
 ## Project Structure
 
