@@ -755,3 +755,116 @@ html {
   transition: opacity 0.2s ease-out;
   filter: blur(1px);
 }
+
+/* 404 Error Page */
+.error-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.error-content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  max-width: 600px;
+  padding: 0 var(--space-md);
+}
+
+.error-code-image {
+  display: block;
+  max-width: 400px;
+  width: clamp(200px, 50vw, 400px);
+  height: auto;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.error-title {
+  font-family: var(--font-body);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: normal;
+  margin: var(--space-sm) 0;
+  color: var(--color-text);
+}
+
+.error-message {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--color-accent);
+  margin-bottom: var(--space-lg);
+  line-height: 1.6;
+}
+
+.error-actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error-visual {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.error-gradient {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 450px;
+  background: radial-gradient(
+    ellipse 70% 60% at 40% 30%,
+    rgba(255, 60, 100, 0.2) 0%,
+    rgba(255, 100, 140, 0.15) 25%,
+    rgba(255, 80, 120, 0.1) 45%,
+    rgba(255, 120, 160, 0.06) 65%,
+    rgba(255, 100, 140, 0.03) 80%,
+    transparent 100%
+  );
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  filter: blur(4px);
+  animation: errorGradientFloat 10s ease-in-out infinite;
+}
+
+@keyframes errorGradientFloat {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  33% {
+    transform: translate(-50%, -50%) scale(1.1) rotate(120deg);
+    border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
+  }
+  66% {
+    transform: translate(-50%, -50%) scale(0.9) rotate(240deg);
+    border-radius: 70% 30% 60% 40% / 30% 60% 40% 70%;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(360deg);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+/* 404 Page Mobile Responsiveness */
+@media (max-width: 768px) {
+  .error-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .error-gradient {
+    width: 400px;
+    height: 300px;
+  }
+}

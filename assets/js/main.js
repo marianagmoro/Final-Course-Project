@@ -124,6 +124,14 @@ function applyTheme(theme) {
         ? "assets/images/creative white.png"
         : "assets/images/creative.png";
   }
+  // Swap 404 error image for dark mode if present
+  const errorCodeImage = document.querySelector(".error-code-image");
+  if (errorCodeImage) {
+    errorCodeImage.src =
+      theme === "dark"
+        ? "assets/images/404 white.png"
+        : "assets/images/404.png";
+  }
   // Swap recent work image for dark mode if present
   const sectionTitle = document.querySelector(".section-title");
   if (sectionTitle) {
