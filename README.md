@@ -24,6 +24,39 @@ A modern, responsive portfolio website showcasing creative design work in 3D ani
 - **Fonts**: Google Fonts (Montserrat, Georgia)
 - **Icons**: Custom SVG icons for consistent styling
 
+## AI Agent Usage Policy
+
+This project was developed with AI assistance following a structured two-phase workflow to ensure transparency and maintain development quality.
+
+### Development Workflow
+
+**Phase 1: Planning** — Each feature request begins with creating a detailed development plan
+**Phase 2: Implementation** — Code implementation only proceeds after plan documentation
+
+### AI Usage Documentation
+
+AI assistance was used for the following components and features:
+
+1. **Hero Section with Glassmorphism Effects** - [docs/plan1.md](docs/plan1.md)
+2. **Organic Gradient Animations** - [docs/plan2.md](docs/plan2.md)
+3. **Dark/Light Theme System** - [docs/plan3.md](docs/plan3.md)
+4. **Custom 404 Error Page** - [docs/plan4.md](docs/plan4.md)
+5. **Responsive Navigation Component** - [docs/plan5.md](docs/plan5.md)
+
+### AI Transparency
+
+- **AI Tool Used**: GitHub Copilot (Claude Sonnet 4)
+- **Usage Scope**: Feature planning, code implementation, debugging assistance
+- **Human Oversight**: All AI-generated code was reviewed, tested, and customized
+- **Final Decisions**: All architectural and design decisions remained human-driven
+
+Each plan file in the `docs/` directory contains:
+
+- Original feature request/prompt
+- Complete AI planning response
+- Implementation notes and modifications made
+- Lessons learned and best practices identified
+
 ## Setup Instructions
 
 ### Prerequisites
