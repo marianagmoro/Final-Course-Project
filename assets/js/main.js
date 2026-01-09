@@ -116,6 +116,14 @@ function applyTheme(theme) {
         ? "assets/images/name white.png"
         : "assets/images/name.png";
   }
+  // Swap hero title image for dark mode if present
+  const heroTitleImage = document.querySelector(".hero-title-image");
+  if (heroTitleImage) {
+    heroTitleImage.src =
+      theme === "dark"
+        ? "assets/images/creative white.png"
+        : "assets/images/creative.png";
+  }
   // Swap recent work image for dark mode if present
   const sectionTitle = document.querySelector(".section-title");
   if (sectionTitle) {
