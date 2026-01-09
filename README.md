@@ -94,18 +94,13 @@ The theme switcher will automatically handle the swapping.
 
 ### Desktop View
 
-![Desktop Light Mode](assets/images/screenshot-desktop-light.png)
-![Desktop Dark Mode](assets/images/screenshot-desktop-dark.png)
+![Desktop Light Mode](assets/images/light mode.png)
+![Desktop Dark Mode](assets/images/dark mode.png)
 
 ### Mobile View
 
-![Mobile Light Mode](assets/images/screenshot-mobile-light.png)
-![Mobile Dark Mode](assets/images/screenshot-mobile-dark.png)
-
-### Features Demo
-
-![Glassmorphism Buttons](assets/images/demo-glassmorphism.gif)
-![Theme Switching](assets/images/demo-theme-switch.gif)
+![Mobile Light Mode](assets/images/phone white.PNG)
+![Mobile Dark Mode](assets/images/phone dark.PNG)
 
 ## Project Structure
 
@@ -165,8 +160,7 @@ Feel free to submit issues and enhancement requests! This portfolio template can
 
 For questions about this project or collaboration opportunities:
 
-- **Portfolio**: [Live Site Link](https://your-portfolio-url.com)
-- **Email**: [Contact through portfolio](https://your-portfolio-url.com#contact)
+- **Portfolio**: [Live Site Link](https://marianagmoro.github.io/Final-Course-Project/)
 - **GitHub**: [@marianagmoro](https://github.com/marianagmoro)
 
 ---
