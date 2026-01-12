@@ -1,6 +1,6 @@
 # Mariana González-Moro Portfolio
 
-**Live Site**: [https://marianagmoro.github.io/Final-Course-Project/](https://marianagmoro.github.io/Final-Course-Project/)
+**Live Site**: [marianagmoro.github.io/Final-Course-Project](https://marianagmoro.github.io/Final-Course-Project/)
 
 ## About This Project
 
